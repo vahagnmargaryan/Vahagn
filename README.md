@@ -11,113 +11,138 @@ g = q + q + q + r + t + leftclick+ b + a + a + e + r + t + leftclick + q + e + a
 h = e + e + q + r + t + leftclick(timing) + e + e + e + r + t + a + a + a + r + t + t(timing) + a + a + e + r + t + leftclick(timing) + q + e + a + r + t + leftclick(timing)
 
 
+from pynput.Keyboard import Key, Controller
+keyboard = Controller()
+
+import json
+
 import time
 
-1::
-InstantInvis:
-SendInput, qqe
-time.sleep(.05)
-SendInput, r
-time.sleep(.2)
-SendInput, t
-return
+
+"abilities" : [
+  {
+  "ability" : "cold_snap",
+  "sphere_1" : "q",
+  "sphere_2" : "q",
+  "sphere_3" : "q"
+  },
+  {
+  "ability" : "ghost_walk",
+  "sphere_1" : "q",
+  "sphere_2" : "q",
+  "sphere_3" : "e",
+  },
+  {
+  "ability" : "ice_wall",
+  "sphere_1" : "q",
+  "sphere_2" : "q",
+  "sphere_3" : "a",
+  },
+  {
+  "ability" : "emp",
+  "sphere_1" : "e",
+  "sphere_2" : "e",
+  "sphere_3" : "e",
+  },
+  {
+  "ability" : "tornado",
+  "sphere_1" : "e",
+  "sphere_2" : "e",
+  "sphere_3" : "q",
+  },
+  {
+  "ability" : "alacrity",
+  "sphere_1" : "e",
+  "sphere_2" : "e",
+  "sphere_3" : "a",
+  },
+  {
+  "ability" : "sunstrike",
+  "sphere_1" : "a",
+  "sphere_2" : "a",
+  "sphere_3" : "a",
+  },
+  {
+  "ability" : "forged_spirit",
+  "sphere_1" : "a",
+  "sphere_2" : "a",
+  "sphere_3" : "q",
+  },
+  {
+  "ability" : "chaos_meteor",
+  "sphere_1" : "a",
+  "sphere_2" : "a",
+  "sphere_3" : "e",
+  },
+  {
+  "ability" : "deafening_blast",
+  "sphere_1" : "q",
+  "sphere_2" : "e",
+  "sphere_3" : "a",
+  }
+ ]
 
 
-2::
-coldsnap:
-SendInput, qqq
+#InstantInvis:
+keyboard.press('1')
+keyboard.release(for ability ghost_walk in data print 'sphere_1', 'sphere_1', 'sphere_3')
 time.sleep(.05)
-SendInput, r
+keyboard.release('r')
 time.sleep(.05)
-SendInput, t
-return
+keyboard.release('t')
 
 
-3::
-iceWall:
-SendInput, qqa
-time.sleep(.05)
-SendInput, r
-time.sleep(.05)
-SendInput, t
-return
 
-4::
-EMP:
-SendInput, eee
-time.sleep(.05)
-SendInput, r
-time.sleep(.05)
-SendInput, t
-return
-
-5::
-tornado: 
-SendInput, eeq
-time.sleep(.05)
-SendInput, r
-return
+#COMBOS
 
 
-6::
-alacrity:
-SendInput, eea
-time.sleep(.05)
-SendInput, r
-time.sleep(.05)
-SendInput, tt
-return
+#tornado+emp+meteor+sunstrike+blast:
 
-
-7::
-blast:
-SendInput, qea
+keyboard.press('2')
+keyboard.release(for ability tornado in data print 'sphere_1', 'sphere_1', 'sphere_3')
 time.sleep(.05)
-SendInput, r
+keyboard.release('r')
 time.sleep(.05)
-SendInput, t
-return
-
-
-8::
-sunstrike:
-SendInput, aaa
-time.sleep(.05)
-SendInput, r
-time.sleep(.05)
-SendInput t
-return
-
-
-9::
-forgedSpirits:
-SendInput, aaq
-time.sleep(.05)
-SendInput, r
-time.sleep(.05)
-SendInput, t
-return
-
-
-p::
-meteor:
-SendInput, aae
-time.sleep(.05)
-SendInput, r
-time.sleep(.05)
-SendInput, t
-return
-
-COMBOS
-
-F::
-tornado+emp+meteor+sunstrike+blast:
-SendInput, 5
+#todo left in click in the arg
+keyboard.release('t', 'LeftClick')
+#todo get the data about hero level
 time.sleep(LiftTime - CastTime)
-SendInput, 4
-time.sleep(1.5)
-SendInput, p
-time.sleep(1.5)
-SendInput, 8
-time.sleep(2)
-SendInput, 7
+
+keyboard.release(for ability emp in data print 'sphere_1', 'sphere_1', 'sphere_3')
+time.sleep(.05)
+keyboard.release('r')
+time.sleep(.05)
+#todo left in click in the arg
+keyboard.release('t', 'LeftClick')
+#todo get the data about hero level
+time.sleep(LiftTime - CastTime)
+
+keyboard.release(for ability chaos_meteor in data print 'sphere_1', 'sphere_1', 'sphere_3')
+time.sleep(.05)
+keyboard.release('r')
+time.sleep(.05)
+#todo left in click in the arg
+keyboard.release('t', 'LeftClick')
+#todo get the data about hero level
+time.sleep(LiftTime - CastTime)
+
+keyboard.release(for ability sunstrike in data print 'sphere_1', 'sphere_1', 'sphere_3')
+time.sleep(.05)
+keyboard.release('r')
+time.sleep(.05)
+#todo left in click in the arg
+keyboard.release('t', 'LeftClick')
+#todo get the data about hero level
+time.sleep(LiftTime - CastTime)
+
+keyboard.release(for ability deafening_blast in data print 'sphere_1', 'sphere_1', 'sphere_3')
+time.sleep(.05)
+keyboard.release('r')
+time.sleep(.05)
+#todo left in click in the arg
+keyboard.release('t', 'LeftClick')
+#todo get the data about hero level
+time.sleep(LiftTime - CastTime)
+
+
+
